@@ -1,0 +1,188 @@
+.breadcrumbs {
+  display: inline-block;
+  border: 1px solid #999;
+  font-family: "Lucida Grande";
+  font-size: 13px;
+  
+  -webkit-border-radius: 4px;
+     -moz-border-radius: 4px;
+      -ms-border-radius: 4px;
+       -o-border-radius: 4px;
+          border-radius: 4px;
+          
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+     -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+      -ms-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+       -o-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+          
+  background: #e1e1e1;
+  background: -webkit-linear-gradient(top, #f0f0f0 0%, #d3d3d3 100%);
+  background:    -moz-linear-gradient(top, #f0f0f0 0%, #d3d3d3 100%);
+  background:     -ms-linear-gradient(top, #f0f0f0 0%, #d3d3d3 100%);
+  background:      -o-linear-gradient(top, #f0f0f0 0%, #d3d3d3 100%);
+  background:         linear-gradient(top, #f0f0f0 0%, #d3d3d3 100%);
+}
+
+.breadcrumbs:after {
+  content: '';
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+* html .breadcrumbs {
+  zoom: 1;
+}
+
+*:first-child + html .breadcrumbs {
+  zoom: 1;
+}
+
+.breadcrumbs ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.breadcrumbs ul li {
+  list-style: none;
+  float: left;
+}
+
+.breadcrumbs ul li:first-child a, .breadcrumbs ul li:first-child span {
+  padding-left: 1em;
+  
+  -webkit-border-top-left-radius: 4px;
+     -moz-border-radius-topleft:  4px;
+          border-top-left-radius: 4px;
+
+  -webkit-border-bottom-left-radius: 4px;
+     -moz-border-radius-bottomleft:  4px;
+          border-bottom-left-radius: 4px;
+}
+
+.breadcrumbs a, .breadcrumbs span {
+  color: #444;
+  display: block;
+  float: left;
+  position: relative;
+  line-height: 2em;
+  padding: 0 1em 0 1.5em;
+  text-decoration: none;
+  
+  background: #e1e1e1;
+  background: -webkit-linear-gradient(top, #f0f0f0 0%, #d3d3d3 100%);
+  background:    -moz-linear-gradient(top, #f0f0f0 0%, #d3d3d3 100%);
+  background:     -ms-linear-gradient(top, #f0f0f0 0%, #d3d3d3 100%);
+  background:      -o-linear-gradient(top, #f0f0f0 0%, #d3d3d3 100%);
+  background:         linear-gradient(top, #f0f0f0 0%, #d3d3d3 100%);
+}
+
+.breadcrumbs a:after, .breadcrumbs span:after {
+  content: '';
+  display: block;
+  z-index: 1;
+  height: 2em;
+  width: 2em;
+  border-right: 2px solid #999;
+  border-top: 2px solid #999;
+  position: absolute;
+  right: 0;
+  top: 0;
+  
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+      -ms-box-sizing: border-box;
+       -o-box-sizing: border-box;
+          box-sizing: border-box;
+  
+  background: #e1e1e1;
+  background: -webkit-linear-gradient(left top, #f0f0f0 0%, #d3d3d3 100%);
+  background:    -moz-linear-gradient(left top, #f0f0f0 0%, #d3d3d3 100%);
+  background:     -ms-linear-gradient(left top, #f0f0f0 0%, #d3d3d3 100%);
+  background:      -o-linear-gradient(left top, #f0f0f0 0%, #d3d3d3 100%);
+  background:         linear-gradient(left top, #f0f0f0 0%, #d3d3d3 100%);
+  
+  -webkit-transform: translateX(1em) rotate(45deg) scale(0.577) skew(15deg, 15deg);
+     -moz-transform: translateX(1em) rotate(45deg) scale(0.577) skew(15deg, 15deg);
+      -ms-transform: translateX(1em) rotate(45deg) scale(0.577) skew(15deg, 15deg);
+       -o-transform: translateX(1em) rotate(45deg) scale(0.577) skew(15deg, 15deg);
+          transform: translateX(1em) rotate(45deg) scale(0.577) skew(15deg, 15deg);
+}
+
+.breadcrumbs a:hover, .breadcrumbs span:hover {
+  color: #fff;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.5);
+  
+  background: #7f7fdd;
+  background: -webkit-linear-gradient(top, #99e 0%, #66c 100%);
+  background:    -moz-linear-gradient(top, #99e 0%, #66c 100%);
+  background:     -ms-linear-gradient(top, #99e 0%, #66c 100%);
+  background:      -o-linear-gradient(top, #99e 0%, #66c 100%);
+  background:         linear-gradient(top, #99e 0%, #66c 100%);
+}
+
+.breadcrumbs a:hover:after, .breadcrumbs span:hover:after {
+  border-color: #777;
+  
+  background: #7f7fdd;
+  background: -webkit-linear-gradient(left top, #99e 0%, #66c 100%);
+  background:    -moz-linear-gradient(left top, #99e 0%, #66c 100%);
+  background:     -ms-linear-gradient(left top, #99e 0%, #66c 100%);
+  background:      -o-linear-gradient(left top, #99e 0%, #66c 100%);
+  background:         linear-gradient(left top, #99e 0%, #66c 100%);
+}
+
+.breadcrumbs a:active, .breadcrumbs span:active {
+  background: #6161c8;
+  background: -webkit-linear-gradient(top, #7676de 0%, #4d4db3 100%);
+  background:    -moz-linear-gradient(top, #7676de 0%, #4d4db3 100%);
+  background:     -ms-linear-gradient(top, #7676de 0%, #4d4db3 100%);
+  background:      -o-linear-gradient(top, #7676de 0%, #4d4db3 100%);
+  background:         linear-gradient(top, #7676de 0%, #4d4db3 100%);
+
+  -webkit-box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.5);
+     -moz-box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.5);
+      -ms-box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.5);
+       -o-box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.5);
+          box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.5);
+}
+
+.breadcrumbs a:active:after, .breadcrumbs span:active:after {
+  background: #6161c8;
+  background: -webkit-linear-gradient(left top, #7676de 0%, #4d4db3 100%);
+  background:    -moz-linear-gradient(left top, #7676de 0%, #4d4db3 100%);
+  background:     -ms-linear-gradient(left top, #7676de 0%, #4d4db3 100%);
+  background:      -o-linear-gradient(left top, #7676de 0%, #4d4db3 100%);
+  background:         linear-gradient(left top, #7676de 0%, #4d4db3 100%);
+  
+  -webkit-box-shadow: inset -2px 2px 3px rgba(0, 0, 0, 0.5);
+     -moz-box-shadow: inset -2px 2px 3px rgba(0, 0, 0, 0.5);
+      -ms-box-shadow: inset -2px 2px 3px rgba(0, 0, 0, 0.5);
+       -o-box-shadow: inset -2px 2px 3px rgba(0, 0, 0, 0.5);
+          box-shadow: inset -2px 2px 3px rgba(0, 0, 0, 0.5);
+}
+
+.breadcrumbs .current, .breadcrumbs .current:hover, .breadcrumbs .current:active {
+  background: inherit;
+  color: #666;
+  text-shadow: none;
+
+  -webkit-box-shadow: none;
+     -moz-box-shadow: none;
+      -ms-box-shadow: none;
+       -o-box-shadow: none;
+          box-shadow: none;
+}
+
+.breadcrumbs .current:after, .breadcrumbs .current:hover:after, .breadcrumbs .current:active:after {
+  content: normal;
+  
+  -webkit-box-shadow: none;
+     -moz-box-shadow: none;
+      -ms-box-shadow: none;
+       -o-box-shadow: none;
+          box-shadow: none;
+}

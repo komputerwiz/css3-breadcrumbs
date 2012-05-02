@@ -1,0 +1,28 @@
+@mixin vendor-prefixes($property, $value) {
+  @each $vendor in webkit, moz, ms, o {
+    -#{$vendor}-#{$property}: $value;
+  }
+  #{$property}: $value;
+}
+
+@mixin box-shadow($x, $y, $blur, $color, $ix: 0, $iy: 0, $iblur: 0, $icolor: transparent) {
+  $value: $x $y $blur $color;
+  @if $icolor != transparent  {
+    $value: $x $y $blur $color, inset $ix $iy $iblur $icolor;
+  }
+
+  @include vendor-prefixes(box-shadow, $value);
+}
+
+@mixin gradient($from, $to, $anchor: top) {
+  background: $from/2 + $to/2; // old browsers
+  background: -webkit-linear-gradient($anchor, $from 0%, $to 100%); // Chrome 10+, Safari 5.1+
+  background:    -moz-linear-gradient($anchor, $from 0%, $to 100%); // FF 3.6+
+  background:     -ms-linear-gradient($anchor, $from 0%, $to 100%); // IE 10+
+  background:      -o-linear-gradient($anchor, $from 0%, $to 100%); // Opera 11.10+
+  background:         linear-gradient($anchor, $from 0%, $to 100%); // W3C
+}
+
+@mixin transform($args) {
+  @include vendor-prefixes(transform, $args)
+}

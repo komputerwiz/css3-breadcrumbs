@@ -1,0 +1,14 @@
+@mixin clearfix {
+  display: inline-block;
+
+  &:after {
+    content: '';
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+  }
+
+  * html & { zoom: 1; }
+  *:first-child+html & { zoom: 1; }
+}

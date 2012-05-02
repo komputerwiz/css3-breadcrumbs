@@ -1,0 +1,100 @@
+@import 'border-radius';
+@import 'clearfix';
+@import 'css3';
+@import 'math';
+
+.breadcrumbs {
+  border: 1px solid #999;
+  font-family: "Lucida Grande";
+  font-size: 13px;
+
+  @include border-radius(4px);
+  @include box-shadow(0, 1px, 3px, rgba(0,0,0,0.5));
+  @include gradient(#f0f0f0, #d3d3d3);
+  @include clearfix;
+
+  ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+
+    li {
+      list-style: none;
+      float: left;
+
+      &:first-child a, &:first-child span {
+        padding-left: 1em;
+        @include border-left-radius(4px);
+      }
+    }
+  }
+
+  a, span {
+    $size: 2em;
+    
+    color: #444;
+    display: block;
+    float: left;
+    position: relative;
+    line-height: $size;
+    padding: 0 1em 0 1.5em;
+    text-decoration: none;
+
+    @include gradient(#f0f0f0, #d3d3d3);
+
+    &:after {
+      content: '';
+      display: block;
+      z-index: 1;
+
+      @include vendor-prefixes(box-sizing, border-box);
+      height: $size;
+      width: $size;
+
+      border: {
+        right: 2px solid #999;
+        top: 2px solid #999;
+      }
+
+      position: absolute;
+      right: 0;
+      top: 0;
+
+      @include gradient(#f0f0f0, #d3d3d3, left top);
+      @include transform(translateX($size/2) rotate(45deg) scale(1/sqrt(3)) skew(15deg, 15deg));
+    }
+
+    &:hover {
+      color: #fff;
+      text-shadow: 0 -1px 0 rgba(0,0,0,0.5);
+      @include gradient(#99e, #66c); // used to be #99e--#66e
+
+      &:after {
+        border-color: #777;
+        @include gradient(#99e, #66c, left top);
+      }
+    }
+    
+    &:active {
+      @include gradient(desaturate(darken(#99e, 10%), 10%), desaturate(darken(#66c, 10%), 10%));
+      @include vendor-prefixes(box-shadow, inset 0 0 3px rgba(0,0,0,0.5));
+      
+      &:after {
+        @include gradient(desaturate(darken(#99e, 10%), 10%), desaturate(darken(#66c, 10%), 10%), left top);
+        @include vendor-prefixes(box-shadow, inset -2px 2px 3px rgba(0,0,0,0.5));
+      }
+    }
+
+    &.current, &.current:hover, &.current:active {
+      background: inherit;
+      color: #666;
+      text-shadow: none;
+      @include vendor-prefixes(box-shadow, none);
+
+      &:after {
+        content: normal;
+        @include vendor-prefixes(box-shadow, none);
+      }
+    }
+  }
+}

@@ -1,0 +1,62 @@
+@import 'css3';
+
+@mixin border-top-left-radius($r) {
+  -webkit-border-top-left-radius: $r;
+  -moz-border-radius-topleft: $r;
+  border-top-left-radius: $r;
+}
+
+@mixin border-top-right-radius($r) {
+  -webkit-border-top-right-radius: $r;
+  -moz-border-radius-topright: $r;
+  border-top-right-radius: $r;
+}
+
+@mixin border-bottom-right-radius($r) {
+  -webkit-border-bottom-right-radius: $r;
+  -moz-border-radius-bottomright: $r;
+  border-bottom-right-radius: $r;
+}
+
+@mixin border-bottom-left-radius($r) {
+  -webkit-border-bottom-left-radius: $r;
+  -moz-border-radius-bottomleft: $r;
+  border-bottom-left-radius: $r;
+}
+
+@mixin border-top-radius($r) {
+  @include border-top-left-radius($r);
+  @include border-top-right-radius($r);
+}
+
+@mixin border-bottom-radius($r) {
+  @include border-bottom-left-radius($r);
+  @include border-bottom-right-radius($r);
+}
+
+@mixin border-left-radius($r) {
+  @include border-top-left-radius($r);
+  @include border-bottom-left-radius($r);
+}
+
+@mixin border-right-radius($r) {
+  @include border-top-right-radius($r);
+  @include border-bottom-right-radius($r);
+}
+
+@mixin border-radius($nw, $ne: nil, $se: nil, $sw: nil) {
+  @if $ne == nil {
+    // all corners receive the same radius
+    @include vendor-prefixes(border-radius, $nw);
+  } @else if $se == nil {
+    // first and second argument applied to top and bottom corners, respectively
+    @if $nw != skip { @include border-top-radius($nw); }
+    @if $ne != skip { @include border-bottom-radius($ne); }
+  } @else {
+    // each corner has its own radius
+    @if $nw != skip { @include border-top-left-radius($nw); }
+    @if $ne != skip { @include border-top-right-radius($ne); }
+    @if $se != skip { @include border-bottom-right-radius($se); }
+    @if $sw != skip { @include border-bottom-left-radius($sw); }
+  }
+}
