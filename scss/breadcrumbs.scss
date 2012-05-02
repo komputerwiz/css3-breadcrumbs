@@ -89,7 +89,9 @@
       background: inherit;
       color: #666;
       text-shadow: none;
+      
       @include vendor-prefixes(box-shadow, none);
+      @include border-right-radius(4px);
 
       &:after {
         content: normal;
