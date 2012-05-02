@@ -18,7 +18,7 @@ There are three usage options
     any necessary browser prefixes (needed for declarations separated by blank
     line), and use that in your theme.
 
-3.  Use the files under `scss` to build your own distribution using the
+3.  Use the files under [`scss`][breadcrumb-scss] to build your own distribution using the
     [SASS Stylesheet Language][sass].
 
 Demo
@@ -37,17 +37,19 @@ File Manifest
 * `scss/breadcrumbs.css`: All of the logic used to build the `breadcrumbs.css`
   file. This might be a little easier to understand.
 * `scss/_*.scss`: other libraries that you might find useful. Credit to
-  [Adam Savitzky][adambom-sass-math] for the _Sass-Math_ functions: it brought
-  to mind several good memories of Sequences and Series from my Calculus 2
+  [Adam Savitzky][adambom] for the _Sass-Math_ functions: it brought
+  to mind several good memories of sequences and series from my Calculus 2
   course!
 
 License
 -------
-Apart from _Sass-Math_, this is my own work, which I hereby release to the
+Apart from [_Sass-Math_][adambom-sass-math], this is my own work, which I hereby release to the
 public domain. Feel free to do whatever you want with this code. Enjoy!
 
 [breadcrumb-css]: https://github.com/komputerwiz/css3-breadcrumbs/blob/master/css/breadcrumbs.css
 [breadcrumb-slim]: https://github.com/komputerwiz/css3-breadcrumbs/blob/master/css/breadcrumbs-slim.css
+[breadcrumb-scss]: https://github.com/komputerwiz/css3-breadcrumbs/tree/master/scss
 [sass]: http://sass-lang.com "Syntactically Awesome StyleSheets"
 [demo]: http://komputerwiz.net/demos/css3-breadcrumbs/
+[adambom]: https://github.com/adambom/Sass-Math
 [adambom-sass-math]: https://github.com/adambom/Sass-Math/blob/master/math.scss
