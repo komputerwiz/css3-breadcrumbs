@@ -1,10 +1,7 @@
-@import 'border-radius';
-@import 'clearfix';
-@import 'css3';
-@import 'math';
+@import 'compass';
 
 $height: 2em;
-$border-radius: 4px;
+$default-border-radius: 4px;
 
 $inactive: #f0f0f0;
 $inactive-dark: #d3d3d3;
@@ -25,36 +22,30 @@ $current-text: #666;
 
 .breadcrumbs {
   border: 1px solid $inactive-sep;
+  display: inline-block;
   font: {
     family: "Lucida Grande", Verdana, Helvetica, Arial, sans-serif;
     size: 13px;
   }
-
-  @include border-radius($border-radius);
-  @include box-shadow(0, 1px, 3px, rgba(0,0,0,0.5));
-  @include gradient($inactive, $inactive-dark);
+  @include border-radius;
+  @include box-shadow(0 1px 3px rgba(0,0,0,0.5));
+  @include background(linear-gradient(top, $inactive, $inactive-dark));
   @include clearfix;
 
   ul {
-    list-style-type: none;
-    
-    &, & li {
-      padding: 0;
-      margin: 0;
-      display: inline;
-    }
+    @include inline-list;
 
     li:first-child {
       a, span {
         padding-left: 1em;
-        @include border-left-radius($border-radius);
+        @include border-left-radius;
       }
     }
-    
+      
     li:last-child {
       a, span {
-        @include border-right-radius($border-radius);
-        
+        @include border-right-radius;
+      
         &:after { content: normal; }
       }
     }
@@ -68,15 +59,15 @@ $current-text: #666;
     line-height: $height;
     padding: 0 1em 0 1.5em;
     text-decoration: none;
-    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.7);
-    @include gradient($inactive, $inactive-dark);
+    @include text-shadow(0 1px 0 rgba(255,255,255,0.7));
+    @include background(linear-gradient(top, $inactive, $inactive-dark));
 
     &:after {
       content: '';
       display: block;
       z-index: 1;
 
-      @include vendor-prefixes(box-sizing, border-box);
+      @include box-sizing(border-box);
       height: $height;
       width: $height;
 
@@ -89,39 +80,39 @@ $current-text: #666;
       right: 0;
       top: 0;
 
-      @include gradient($inactive, $inactive-dark, left top);
+      @include background(linear-gradient(left top, $inactive, $inactive-dark));
       @include transform(translateX($height/2) rotate(45deg) scale(1/sqrt(3)) skew(15deg, 15deg));
     }
 
     &:hover {
       color: $hover-text;
-      text-shadow: 0 -1px 0 rgba(0,0,0,0.5);
-      @include gradient($hover, $hover-dark);
+      @include text-shadow(0 -1px 0 rgba(0,0,0,0.5));
+      @include background(linear-gradient(top, $hover, $hover-dark));
 
       &:after {
         border-color: $hover-sep;
-        @include gradient($hover, $hover-dark, left top);
+        @include background(linear-gradient(left top, $hover, $hover-dark));
       }
     }
     
     &:active {
       color: $active-text;
-      @include gradient($active, $active-dark);
-      @include vendor-prefixes(box-shadow, inset 0 0 3px rgba(0,0,0,0.5));
+      @include background(linear-gradient(top, $active, $active-dark));
+      @include box-shadow(inset 0 0 3px rgba(0,0,0,0.5));
       
       &:after {
         border-color: $active-sep;
-        @include gradient($active, $active-dark, left top);
-        @include vendor-prefixes(box-shadow, inset -2px 2px 3px rgba(0,0,0,0.5));
+        @include background(linear-gradient(left top, $active, $active-dark));
+        @include box-shadow(inset -2px 2px 3px rgba(0,0,0,0.5));
       }
     }
 
     &.current, &.current:hover, &.current:active {
       background: inherit;
       color: $current-text;
-      text-shadow: none;
-      @include vendor-prefixes(box-shadow, none);
-      @include border-right-radius($border-radius);
+      @include text-shadow(0 1px 0 rgba(255,255,255,0.7));
+      @include box-shadow(none);
+      @include border-right-radius;
 
       &:after { content: normal; }
     }

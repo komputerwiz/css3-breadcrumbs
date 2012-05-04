@@ -1,7 +1,7 @@
 .breadcrumbs {
   display: inline-block;
   border: 1px solid #999;
-  font-family: "Lucida Grande";
+  font-family: "Lucida Grande", Verdana, Helvetica, Arial, sans-serif;
   font-size: 13px;
   
   -webkit-border-radius: 4px;
@@ -41,26 +41,47 @@
 }
 
 .breadcrumbs ul {
-  padding: 0;
-  margin: 0;
-  list-style: none;
+  list-style-type: none;
 }
 
-.breadcrumbs ul li {
-  list-style: none;
-  float: left;
+.breadcrumbs ul, .breadcrumbs ul li {
+  padding: 0;
+  margin: 0;
+  display: inline;
 }
 
 .breadcrumbs ul li:first-child a, .breadcrumbs ul li:first-child span {
   padding-left: 1em;
   
   -webkit-border-top-left-radius: 4px;
-     -moz-border-radius-topleft:  4px;
+      -moz-border-radius-topleft: 4px;
+      -ms-border-top-left-radius: 4px;
+       -o-border-top-left-radius: 4px;
           border-top-left-radius: 4px;
 
   -webkit-border-bottom-left-radius: 4px;
-     -moz-border-radius-bottomleft:  4px;
+      -moz-border-radius-bottomleft: 4px;
+      -ms-border-bottom-left-radius: 4px;
+       -o-border-bottom-left-radius: 4px;
           border-bottom-left-radius: 4px;
+}
+
+.breadcrumbs ul li:last-child a, .breadcrumbs ul li:last-child span {
+  -webkit-border-top-right-radius: 4px;
+      -moz-border-radius-topright: 4px;
+      -ms-border-top-right-radius: 4px;
+       -o-border-top-right-radius: 4px;
+          border-top-right-radius: 4px;
+
+  -webkit-border-bottom-right-radius: 4px;
+      -moz-border-radius-bottomright: 4px;
+      -ms-border-bottom-right-radius: 4px;
+       -o-border-bottom-right-radius: 4px;
+          border-bottom-right-radius: 4px;
+}
+
+.breadcrumbs ul li:last-child a:after, .breadcrumbs ul li:last-child span:after {
+  content: normal;
 }
 
 .breadcrumbs a, .breadcrumbs span {
@@ -71,6 +92,7 @@
   line-height: 2em;
   padding: 0 1em 0 1.5em;
   text-decoration: none;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.7);
   
   background: #e1e1e1;
   background: -webkit-linear-gradient(top, #f0f0f0 0%, #d3d3d3 100%);
@@ -94,8 +116,6 @@
   
   -webkit-box-sizing: border-box;
      -moz-box-sizing: border-box;
-      -ms-box-sizing: border-box;
-       -o-box-sizing: border-box;
           box-sizing: border-box;
   
   background: #e1e1e1;
@@ -168,14 +188,18 @@
 .breadcrumbs .current, .breadcrumbs .current:hover, .breadcrumbs .current:active {
   background: inherit;
   color: #666;
-  text-shadow: none;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.7);
   
   -webkit-border-top-right-radius: 4px;
       -moz-border-radius-topright: 4px;
+      -ms-border-top-right-radius: 4px;
+       -o-border-top-right-radius: 4px;
           border-top-right-radius: 4px;
           
   -webkit-border-bottom-right-radius: 4px;
       -moz-border-radius-bottomright: 4px;
+      -ms-border-bottom-right-radius: 4px;
+       -o-border-bottom-right-radius: 4px;
           border-bottom-right-radius: 4px;
 
   -webkit-box-shadow: none;
@@ -187,10 +211,4 @@
 
 .breadcrumbs .current:after, .breadcrumbs .current:hover:after, .breadcrumbs .current:active:after {
   content: normal;
-  
-  -webkit-box-shadow: none;
-     -moz-box-shadow: none;
-      -ms-box-shadow: none;
-       -o-box-shadow: none;
-          box-shadow: none;
 }
