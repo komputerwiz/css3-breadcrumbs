@@ -126,7 +126,7 @@
   background:         linear-gradient(left top, #f0f0f0 0%, #d3d3d3 100%);
   
   -webkit-transform: translateX(1em) rotate(45deg) scale(0.577) skew(15deg, 15deg);
-     -moz-transform: translateX(1em) rotate(45deg) scale(0.577) skew(15deg, 15deg);
+     -moz-transform: translateX(1em) rotate(45deg) scale(0.577) skewX(15deg) skewY(15deg);
       -ms-transform: translateX(1em) rotate(45deg) scale(0.577) skew(15deg, 15deg);
        -o-transform: translateX(1em) rotate(45deg) scale(0.577) skew(15deg, 15deg);
           transform: translateX(1em) rotate(45deg) scale(0.577) skew(15deg, 15deg);
